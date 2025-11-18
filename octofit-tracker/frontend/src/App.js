@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Routes, Route } from 'react-router-dom';
+import { NavLink, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Activities from './components/Activities';
 import Teams from './components/Teams';
@@ -8,24 +8,30 @@ import Workouts from './components/Workouts';
 import Leaderboard from './components/Leaderboard';
 
 function App() {
+  const apiBase = process.env.REACT_APP_CODESPACE_NAME
+    ? `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/`
+    : 'http://localhost:8000/api/';
+
+  console.log('OctoFit frontend starting. API base:', apiBase);
+
   return (
     <div className="App container mt-4">
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
         <div className="container-fluid">
-          <Link className="navbar-brand text-white d-flex align-items-center" to="/">
+          <NavLink className="navbar-brand text-white d-flex align-items-center" to="/">
             <img src="/octofitapp-small.svg" alt="OctoFit" style={{width:36,height:36,marginRight:12}} />
             <span>OctoFit</span>
-          </Link>
+          </NavLink>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item"><Link className="nav-link" to="/activities">Activities</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/teams">Teams</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/users">Users</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/workouts">Workouts</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/leaderboard">Leaderboard</Link></li>
+              <li className="nav-item"><NavLink className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'} to="/activities">Activities</NavLink></li>
+              <li className="nav-item"><NavLink className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'} to="/teams">Teams</NavLink></li>
+              <li className="nav-item"><NavLink className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'} to="/users">Users</NavLink></li>
+              <li className="nav-item"><NavLink className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'} to="/workouts">Workouts</NavLink></li>
+              <li className="nav-item"><NavLink className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'} to="/leaderboard">Leaderboard</NavLink></li>
             </ul>
           </div>
         </div>
