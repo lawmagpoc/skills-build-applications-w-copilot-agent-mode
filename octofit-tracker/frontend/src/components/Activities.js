@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
 const Activities = () => {
-  const baseUrl = process.env.REACT_APP_CODESPACE_NAME
-    ? `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/`
-    : 'http://localhost:8000/api/';
-  const endpoint = baseUrl + 'activities/';
+  const endpoint = process.env.REACT_APP_CODESPACE_NAME
+    ? `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/activities/`
+    : 'http://localhost:8000/api/activities/';
   const [data, setData] = useState([]);
 
   useEffect(() => {
