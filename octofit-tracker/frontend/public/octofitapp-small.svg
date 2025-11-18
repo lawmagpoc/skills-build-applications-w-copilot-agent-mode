@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect rx="10" width="64" height="64" fill="#0d6efd" />
+  <g transform="translate(8,8)" fill="#fff">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M28 6 L24 22 L36 22 Z" fill="#fff" />
+  </g>
+  <text x="50" y="58" font-size="8" font-family="Arial, Helvetica, sans-serif" fill="#fff" text-anchor="end">Octo</text>
+</svg>

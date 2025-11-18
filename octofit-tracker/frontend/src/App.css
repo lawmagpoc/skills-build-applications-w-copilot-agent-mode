@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background: #f8f9fa;
+  background: linear-gradient(180deg, #f8f9fa 0%, #eef3ff 100%);
 }
 
 .App-logo {
@@ -15,7 +15,7 @@
 }
 
 .App-header {
-  padding: 2rem 0;
+  padding: 1rem 0.5rem;
   margin-bottom: 1rem;
 }
 
@@ -33,9 +33,50 @@
 }
 
 .card {
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(13,110,253,0.08);
 }
 
 .h4 {
   margin-bottom: 1rem;
+  color: #0d6efd;
+}
+
+/* Tables */
+.table {
+  background: #fff;
+}
+.table thead th {
+  background: linear-gradient(90deg, #0d6efd22, #0d6efd11);
+  color: #073567;
+}
+.table tbody tr:hover {
+  background: #f1f7ff;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+.btn-primary:hover {
+  background-color: #094fc1;
+  border-color: #094fc1;
+}
+
+/* Links */
+a {
+  color: #0d6efd;
+}
+a:hover {
+  color: #094fc1;
+}
+
+/* Navigation */
+.navbar {
+  box-shadow: 0 4px 12px rgba(13,110,253,0.06);
+}
+
+/* Headings */
+h2, h3, h4 {
+  color: #073567;
 }
