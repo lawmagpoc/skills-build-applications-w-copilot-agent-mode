@@ -22,15 +22,27 @@ const Leaderboard = () => {
 
   return (
     <div>
-      <h2>Leaderboard</h2>
-      <ul className="list-group">
-        {data.map((l, i) => (
-          <li key={i} className="list-group-item d-flex justify-content-between">
-            <span>{l.team?.name || l.team}</span>
-            <span className="badge bg-primary">{l.points}</span>
-          </li>
-        ))}
-      </ul>
+      <h2 className="h4 mb-3">Leaderboard</h2>
+      <div className="table-responsive">
+        <table className="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Team</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((l, i) => (
+              <tr key={i}>
+                <td>{i + 1}</td>
+                <td>{l.team?.name || l.team}</td>
+                <td>{l.points}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

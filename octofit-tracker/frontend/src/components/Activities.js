@@ -22,14 +22,31 @@ const Activities = () => {
 
   return (
     <div>
-      <h2>Activities</h2>
-      <ul className="list-group">
-        {data.map((a, i) => (
-          <li key={i} className="list-group-item">
-            <strong>{a.type}</strong> — {a.duration} minutes on {a.date}
-          </li>
-        ))}
-      </ul>
+      <h2 className="h4 mb-3">Activities</h2>
+      <div className="table-responsive">
+        <table className="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Type</th>
+              <th>Duration (min)</th>
+              <th>Date</th>
+              <th>User</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((a, i) => (
+              <tr key={i}>
+                <td>{i + 1}</td>
+                <td>{a.type}</td>
+                <td>{a.duration}</td>
+                <td>{a.date}</td>
+                <td>{a.user?.name || a.user || '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

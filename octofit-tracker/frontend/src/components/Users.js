@@ -22,14 +22,29 @@ const Users = () => {
 
   return (
     <div>
-      <h2>Users</h2>
-      <ul className="list-group">
-        {data.map((u, i) => (
-          <li key={i} className="list-group-item">
-            {u.name} — {u.email} {u.team?.name ? `(${u.team.name})` : ''}
-          </li>
-        ))}
-      </ul>
+      <h2 className="h4 mb-3">Users</h2>
+      <div className="table-responsive">
+        <table className="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Team</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((u, i) => (
+              <tr key={i}>
+                <td>{i + 1}</td>
+                <td>{u.name}</td>
+                <td>{u.email}</td>
+                <td>{u.team?.name || u.team || '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

@@ -22,15 +22,29 @@ const Workouts = () => {
 
   return (
     <div>
-      <h2>Workouts</h2>
-      <ul className="list-group">
-        {data.map((w, i) => (
-          <li key={i} className="list-group-item">
-            <strong>{w.name}</strong>
-            <div>{w.description}</div>
-          </li>
-        ))}
-      </ul>
+      <h2 className="h4 mb-3">Workouts</h2>
+      <div className="table-responsive">
+        <table className="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Suggested For</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((w, i) => (
+              <tr key={i}>
+                <td>{i + 1}</td>
+                <td>{w.name}</td>
+                <td>{w.description}</td>
+                <td>{w.suggested_for || '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

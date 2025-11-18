@@ -22,12 +22,27 @@ const Teams = () => {
 
   return (
     <div>
-      <h2>Teams</h2>
-      <ul className="list-group">
-        {data.map((t, i) => (
-          <li key={i} className="list-group-item">{t.name}</li>
-        ))}
-      </ul>
+      <h2 className="h4 mb-3">Teams</h2>
+      <div className="table-responsive">
+        <table className="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Members</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((t, i) => (
+              <tr key={i}>
+                <td>{i + 1}</td>
+                <td>{t.name}</td>
+                <td>{t.members?.length ?? '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
